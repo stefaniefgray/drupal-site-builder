@@ -1,0 +1,24 @@
+# Composer-managed code (rebuilt by `composer install`)
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+/drush/Commands/contrib/
+/recipes/
+
+# Drupal site state: never commit credentials, uploads, or generated config
+/web/sites/*/settings*.php
+/web/sites/*/services*.yml
+/web/sites/*/files/
+/web/sites/simpletest/
+
+# DDEV local state
+/.ddev/.ddev-docker-compose-*.yaml
+/.ddev/db_snapshots/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

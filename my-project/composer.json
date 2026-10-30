@@ -11,10 +11,6 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
     ],
@@ -25,9 +21,8 @@
         "drupal/core-project-message": "^11.4",
         "drupal/core-recipe-unpack": "^11.4",
         "drupal/core-recommended": "^11.4",
-        "drupal/mysql56": "^1.7",
         "drupal/stage_file_proxy": "^4.0",
-        "drush/drush": "^10.0"
+        "drush/drush": "^13.0"
     },
     "conflict": {
         "drupal/drupal": "*"
