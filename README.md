@@ -2,6 +2,32 @@
 
 Repository for Drupal Site Builder certification exam work.
 
+## AI assistance disclosure
+
+> **I am completing the Acquia Certified Drupal Site Builder coursework and
+> exam preparation manually. Claude (an AI assistant made by Anthropic) was used
+> only to troubleshoot my development environment, not to do the coursework.**
+
+This repository shows "Claude" as the author of three commits. Here is exactly
+what that covers:
+
+| Commit | What Claude did |
+|---|---|
+| `99a91d6` | Fixed `composer.json` after diagnosing an out-of-sync `composer.lock`: replaced Drush 10 with Drush 13 (Drush 10 does not support Drupal 11), removed `drupal/mysql56` and an unused package repository. Added a `.gitignore`. |
+| `6b7b22f` | Wrote the DDEV setup and interrupted-install recovery instructions in this README. |
+| `4cfd22c` | Researched the October 2026 PHP security patches and documented them in this README. |
+
+Outside of commits, Claude also advised on getting the project to run in
+GitHub Codespaces (restarting DDEV after a failed install, port forwarding,
+reverse-proxy settings, file permissions). I ran those steps myself.
+
+**What Claude did not do in this repository:** write course exercises, build or
+configure site content, or produce any of the coursework itself. The learning
+and the Drupal site building are my own work.
+
+The Claude commit trailers are left in place on purpose, so the history stays
+accurate.
+
 The Drupal codebase lives in [`my-project/`](my-project/). It is a Composer
 project based on `drupal/recommended-project` (Drupal 11.4, PHP 8.4).
 
