@@ -31,6 +31,36 @@ accurate.
 The Drupal codebase lives in [`my-project/`](my-project/). It is a Composer
 project based on `drupal/recommended-project` (Drupal 11.4, PHP 8.4).
 
+## Open Drupal in GitHub Codespaces (no VPS)
+
+This repository includes a Codespaces dev container that installs DDEV and starts
+the Drupal 11 practice project in `my-project/` automatically. It exposes the
+Drupal website on a **private** GitHub-forwarded port.
+
+1. Open [the repository](https://github.com/stefaniefgray/drupal-site-builder),
+   select **Code → Codespaces → Create codespace** (after these changes are merged).
+   To try the pull-request branch before merging, select that branch first.
+2. Let the creation command finish. It starts DDEV, installs Composer dependencies,
+   and installs Drupal only if `web/sites/default/settings.php` is absent.
+3. In Codespaces open the **PORTS** panel, then select **Open in Browser** for
+   **Drupal Site Builder (HTTP)** on **port 8080**.
+4. Open `/user/login` on that forwarded URL. On a fresh installation, the
+   site-install output in the Codespace creation logs includes the generated
+   admin password. Save it in your password manager. If you've already installed
+   the site, use your existing credentials.
+5. If you need a one-time login link after setup, run:
+   `cd my-project && ddev drush uli`. Use the forwarded URL's hostname in
+   place of the DDEV-generated hostname if necessary.
+
+For an existing Codespace, pull the new configuration and select
+**Codespaces: Rebuild Container**; commit or back up any uncommitted work first.
+The DDEV database lives in the Codespace, **not** in the Git repository. Don't
+delete your old Codespace until any desired database/files are exported from it.
+
+The site is available while its Codespace is running, not continuously hosted.
+GitHub Codespaces usage/storage allowances and charges may apply. Keep port 8080
+**private**; no public exposure or OVH VPS is required.
+
 ## Local setup (DDEV)
 
 Run everything from `my-project/`:
