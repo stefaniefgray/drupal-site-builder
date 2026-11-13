@@ -9,6 +9,12 @@ if [ ! -f .ddev/config.yaml ]; then
   ddev config --project-type=drupal11 --docroot=web --php-version=8.4 --project-name=site-builder
 fi
 
+for attempt in $(seq 1 60); do
+  if docker ps >/dev/null 2>&1; then break; fi
+  sleep 2
+done
+docker ps >/dev/null 2>&1 || { echo "Docker did not become ready"; exit 1; }
+
 ddev start
 ddev composer install --no-interaction
 
@@ -20,6 +26,6 @@ else
 fi
 
 echo
-echo "Open the private 'Drupal Site Builder' port 80 link in the Codespaces PORTS tab."
+echo "Open the private 'Drupal Site Builder' port 8080 link in the Codespaces PORTS tab."
 echo "For an existing site, use its existing Drupal admin credentials."
 echo "For a fresh site, the install command above outputs the admin password."
