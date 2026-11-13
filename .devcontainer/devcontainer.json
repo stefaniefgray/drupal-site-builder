@@ -1,0 +1,30 @@
+{
+  "name": "Drupal 11 Site Builder (DDEV)",
+  "image": "mcr.microsoft.com/devcontainers/base:debian-12",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    },
+    "ghcr.io/ddev/ddev/install-ddev:latest": {}
+  },
+  "forwardPorts": [
+    80
+  ],
+  "portsAttributes": {
+    "80": {
+      "label": "Drupal Site Builder",
+      "onAutoForward": "openBrowser",
+      "visibility": "private"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup-drupal.sh",
+  "postStartCommand": "bash .devcontainer/start-drupal.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}
