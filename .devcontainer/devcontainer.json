@@ -8,12 +8,17 @@
     "ghcr.io/ddev/ddev/install-ddev:latest": {}
   },
   "forwardPorts": [
-    80
+    8080
   ],
   "portsAttributes": {
-    "80": {
-      "label": "Drupal Site Builder",
+    "8080": {
+      "label": "Drupal Site Builder (HTTP)",
       "onAutoForward": "openBrowser",
+      "visibility": "private"
+    },
+    "8443": {
+      "label": "Drupal HTTPS",
+      "onAutoForward": "ignore",
       "visibility": "private"
     }
   },
